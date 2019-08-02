@@ -34,7 +34,7 @@ def test():
     return 'HelloWorld'
 
 if __name__ == '__main__':
-    app.config['UPLOAD_FOLDER'] = os.getcwd()
+    app.config['UPLOAD_FOLDER'] = os.getcwd() + '/firmware'
     print(os.getcwd())
     app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
     app.run()
