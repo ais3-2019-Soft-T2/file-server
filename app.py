@@ -29,6 +29,9 @@ def upload_file():
         })
     return Response(status=401)
 
+@app.route('test')
+def test():
+    return 'HelloWorld'
 
 if __name__ == '__main__':
     app.config['UPLOAD_FOLDER'] = os.getcwd()
