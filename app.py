@@ -14,7 +14,7 @@ def allowed_file(filename):
 @app.route('/<firmware_name>')
 def uploaded_file(firmware_name):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               "firmware/{}.json".format(firmware_name))
+                               "firmware/{}".format(firmware_name))
 
 
 @app.route('/')
@@ -27,7 +27,7 @@ def upload_file():
         file = request.files['file']
         file_name = '{}_firm'.format(time.time())
         dir_name = app.config['UPLOAD_FOLDER'] + '/firmware'
-        file.save("{}/{}.json".format(dir_name, file_name))
+        file.save("{}/{}".format(dir_name, file_name))
         return jsonify({
             'firmware_name': file_name
         })
