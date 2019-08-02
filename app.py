@@ -17,7 +17,11 @@ def uploaded_file(firmware_name):
                                "{}.json".format(firmware_name))
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def home():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], 'index.html')
+
+@app.route('/', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
@@ -28,6 +32,7 @@ def upload_file():
             'firmware_name': file_name
         })
     return Response(status=401)
+
 
 @app.route('/test')
 def test():
