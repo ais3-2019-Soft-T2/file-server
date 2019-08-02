@@ -29,7 +29,7 @@ def upload_file():
         })
     return Response(status=401)
 
-@app.route('test')
+@app.route('/test')
 def test():
     return 'HelloWorld'
 
