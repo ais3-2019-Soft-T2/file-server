@@ -1,11 +1,7 @@
-# -*- coding: utf-8 -*-
-import os
-from flask import Flask, request, url_for, send_from_directory, Response, jsonify
-from werkzeug import secure_filename
+#!/usr/bin/python
+from flask import Flask, request, send_from_directory, Response, jsonify
 import time
 import subprocess
-
-# ALLOWED_EXTENSIONS = set(['json'])
 
 app = Flask(__name__)
 
